@@ -31,7 +31,7 @@ jobs:
   include:
     - stage: check header
       script:
-        - git clone --branch=devops https://github.com/vmware/singleton.git devops
+        - git clone --branch=devops https://github.com/surite/singleton.git devops
         - cp $TRAVIS_BUILD_DIR/devops/check_headers.py . && chmod +x check_headers.py
         - python3 ./check_headers.py -f "$(git diff --name-only --diff-filter=d $TRAVIS_COMMIT_RANGE)"
     - stage: Unit Test
